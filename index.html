@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australia Family Trip 2026 | Select Your Route</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#F5EDE3;--ocean:#1B5E7B;--ocean-light:#2A7FA5;--coral:#E85D3A;--sun:#F59E0B;--sun-dark:#D97706;--bark:#3D2B1F;--white:#FFF;--g100:#F8F6F3;--g200:#EDE8E0;--g700:#4A4238}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--sand);color:var(--bark);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+.hero{position:relative;height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#0C3547 0%,#1B5E7B 50%,#E85D3A 100%);text-align:center;color:var(--white);padding:2rem}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.3}
+.hero-content{position:relative;z-index:2;animation:fadeUp .8s ease-out}
+.hero-flag{font-family:'DM Sans',sans-serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;opacity:0.8}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
+.hero p{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.8)}
+
+.selection-container{max-width:1100px;margin:-5rem auto 4rem;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem;width:100%;position:relative;z-index:10}
+.route-card{background:var(--white);border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.1);transition:transform .4s cubic-bezier(0.165, 0.84, 0.44, 1),box-shadow .4s ease;text-decoration:none;color:inherit;display:flex;flex-direction:column;animation:fadeUp .8s ease-out both}
+.route-card:nth-child(2){animation-delay:.2s}
+.route-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,0,0,0.15)}
+
+.card-image{height:220px;position:relative;overflow:hidden}
+.card-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.4) 100%)}
+.route-card.melbourne .card-image{background:linear-gradient(135deg,var(--ocean) 0%,var(--ocean-light) 100%)}
+.route-card.brisbane .card-image{background:linear-gradient(135deg,var(--sun-dark) 0%,var(--sun) 100%)}
+.card-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:5rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.2))}
+
+.card-content{padding:2.5rem;display:flex;flex-direction:column;flex-grow:1}
+.route-label{font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+.route-card.melbourne .route-label{color:var(--ocean)}
+.route-card.brisbane .route-label{color:var(--sun-dark)}
+
+.card-content h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:1rem;color:var(--bark)}
+.card-content p{font-size:.95rem;color:var(--g700);line-height:1.7;margin-bottom:2rem;flex-grow:1}
+
+.route-btn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;padding:1rem 2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transition:all .3s ease}
+.route-card.melbourne .route-btn{background:var(--ocean);color:var(--white)}
+.route-card.brisbane .route-btn{background:var(--sun-dark);color:var(--white)}
+.route-card:hover .route-btn{opacity:0.9;gap:1rem}
+
+.footer{text-align:center;padding:4rem 2rem;margin-top:auto;font-size:.85rem;color:var(--g700);font-family:'DM Sans',sans-serif;opacity:0.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){.hero{height:40vh}.selection-container{margin-top:-3rem;gap:1.5rem}.card-content{padding:1.5rem}.card-image{height:180px}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-flag">🇦🇺 Family Trip Options</div>
+    <h1>Australia 2026</h1>
+    <p>시드니 IN · 동호주 야간열차를 타고 떠나는 두 가지 여정</p>
+  </div>
+</section>
+
+<main class="selection-container">
+  <!-- Melbourne Card -->
+  <a href="australia-final-v2.html" class="route-card melbourne">
+    <div class="card-image">
+      <div class="card-icon">🐨</div>
+    </div>
+    <div class="card-content">
+      <div class="route-label">Option 01</div>
+      <h2>Sydney & Melbourne</h2>
+      <p>예술과 커피의 도시 멜버른. 그레이트 오션 로드의 압도적인 자연경관과 시티 트램 투어를 즐기는 완벽한 남부 여정.</p>
+      <div class="route-btn">View Itinerary <span>→</span></div>
+    </div>
+  </a>
+
+  <!-- Brisbane Card -->
+  <a href="australia-brisbane.html" class="route-card brisbane">
+    <div class="card-image">
+      <div class="card-icon">☀️</div>
+    </div>
+    <div class="card-content">
+      <div class="route-label">Option 02</div>
+      <h2>Sydney & Brisbane</h2>
+      <p>아열대의 여유와 따사로운 햇살. 론파인 코알라 보호구와 골드코스트의 금빛 해변을 만나는 화창한 동북부 여정.</p>
+      <div class="route-btn" style="background:var(--sun-dark)">View Itinerary <span>→</span></div>
+    </div>
+  </a>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Australia Family Trip Guide · Created for Kenneth's Family</p>
+</footer>
+
+</body>
+</html>
