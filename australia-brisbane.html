@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>호주 가족여행 8일 | 시드니 & 브리즈번 | 6.23 — 6.30</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#F5EDE3;--ocean:#1B5E7B;--ocean-light:#2A7FA5;--coral:#E85D3A;--coral-light:#FF7F5C;--sun:#F59E0B;--sun-dark:#D97706;--reef:#00B4A0;--bark:#3D2B1F;--bark-light:#5C4033;--golden:#D4A843;--train:#6B4C9A;--white:#FFF;--g100:#F8F6F3;--g200:#EDE8E0;--g300:#C4BAA8;--g500:#8A7E6E;--g700:#4A4238}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--sand);color:var(--bark);line-height:1.7;-webkit-font-smoothing:antialiased}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(165deg,#0C3547 0%,#1B5E7B 25%,#6B4C9A 55%,#F59E0B 100%);overflow:hidden;text-align:center;padding:2rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 25% 75%,rgba(245,158,11,.2) 0%,transparent 70%),radial-gradient(ellipse 500px 500px at 75% 25%,rgba(107,76,154,.25) 0%,transparent 70%),url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:2}
+.hero-flag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:.5rem 1.5rem;font-size:.85rem;color:rgba(255,255,255,.9);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;font-family:'DM Sans',sans-serif;animation:fadeDown .8s ease-out}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,6rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:1rem;animation:fadeUp .8s ease-out .2s both}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--sun)}
+.hero-subtitle{font-size:clamp(.95rem,2.5vw,1.25rem);color:rgba(255,255,255,.75);font-weight:300;margin-bottom:3rem;animation:fadeUp .8s ease-out .4s both}
+.hero-dates{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .6s both}
+.hero-date-card{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:1rem 1.3rem;text-align:center;color:var(--white);min-width:110px}
+.hero-date-card .label{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-bottom:.15rem;font-family:'DM Sans',sans-serif}
+.hero-date-card .value{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.4);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-family:'DM Sans',sans-serif;animation:bounce 2s infinite 1.5s}
+.scroll-hint::after{content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,.3);margin:.75rem auto 0}
+
+.flight-banner{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 0}
+.flight-card{display:flex;align-items:center;gap:1.5rem;background:var(--white);border-radius:16px;padding:1.25rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,.06);flex-wrap:wrap}
+.flight-card .airline{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;color:var(--coral);background:rgba(232,93,58,.08);padding:.3rem .8rem;border-radius:8px}
+.flight-card .route{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;color:var(--bark)}
+.flight-card .detail{font-size:.8rem;color:var(--g500)}
+
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;background:var(--bark)}
+.overview-item{padding:1.5rem 1rem;text-align:center;border-right:1px solid rgba(255,255,255,.08);transition:background .3s}
+.overview-item:hover{background:rgba(255,255,255,.03)}.overview-item:last-child{border-right:none}
+.overview-item .icon{font-size:1.3rem;margin-bottom:.3rem}
+.overview-item .title{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:var(--golden);margin-bottom:.15rem}
+.overview-item .detail{color:rgba(255,255,255,.85);font-size:.82rem;font-weight:500}
+
+.nights-bar{display:flex;max-width:1100px;margin:2rem auto 0;padding:0 2rem;gap:3px;height:44px}
+.nights-bar .bar-seg{border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--white)}
+.bar-syd{background:var(--ocean);flex:3}.bar-train{background:var(--train);flex:.7;font-size:.55rem!important}.bar-bne{background:var(--sun-dark);flex:3}
+
+.city-section{padding:4rem 2rem 5rem;max-width:1100px;margin:0 auto}
+.city-header{display:flex;align-items:flex-end;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--g200)}
+.city-number{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;line-height:1;color:var(--g200)}
+.city-info h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--bark);line-height:1.15}
+.city-info .city-meta{font-family:'DM Sans',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--g500);margin-top:.25rem}
+.city-weather,.transport-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border-radius:100px;padding:.5rem 1rem;font-size:.8rem;color:var(--g700);margin-bottom:.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.transport-badge{margin-left:.5rem;margin-bottom:2rem}
+
+.day-card{background:var(--white);border-radius:20px;padding:2.5rem;margin-bottom:1.5rem;box-shadow:0 4px 24px rgba(0,0,0,.04);transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
+.day-card:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.day-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%}
+.day-card.sydney::before{background:var(--ocean)}.day-card.brisbane::before{background:var(--sun-dark)}
+.day-label{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.day-label.sydney{color:var(--ocean)}.day-label.brisbane{color:var(--sun-dark)}
+.day-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--bark);margin-bottom:.5rem}
+.day-narrative{font-size:.95rem;color:var(--g500);margin-bottom:2rem;line-height:1.8}
+.place-list{display:flex;flex-direction:column;gap:1.25rem}
+.place-item{display:grid;grid-template-columns:60px 1fr auto;gap:1rem;align-items:start;padding:1.25rem;border-radius:14px;background:var(--g100);transition:background .2s}
+.place-item:hover{background:var(--g200)}
+.place-time{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;color:var(--g500);text-align:center;padding-top:.15rem}
+.place-content h4{font-size:1.05rem;font-weight:700;color:var(--bark);margin-bottom:.3rem}
+.place-content h4 a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.place-content h4 a:hover{color:var(--ocean-light);border-bottom-color:var(--ocean-light)}
+.place-content .place-note{font-size:.85rem;color:var(--g500);line-height:1.6}
+.place-content .spot-tag{display:inline-block;font-size:.7rem;font-family:'DM Sans',sans-serif;font-weight:600;background:rgba(212,168,67,.15);color:#9A7820;padding:.15rem .5rem;border-radius:6px;margin-top:.4rem;margin-right:.3rem}
+.place-link{display:inline-flex;align-items:center;gap:.3rem;font-family:'DM Sans',sans-serif;font-size:.7rem;color:var(--ocean-light);text-decoration:none;margin-top:.5rem;transition:color .2s}
+.place-link:hover{color:var(--coral)}
+.link-icon{display:inline}.link-icon svg{width:12px;height:12px;vertical-align:middle}
+.place-badge{display:inline-flex;align-items:center;gap:.3rem;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .7rem;border-radius:100px;white-space:nowrap;align-self:center}
+.badge-active{background:rgba(232,93,58,.1);color:var(--coral)}.badge-food{background:rgba(212,168,67,.12);color:#B08A20}
+.badge-culture{background:rgba(27,94,123,.1);color:var(--ocean)}.badge-nature{background:rgba(0,180,160,.1);color:#008F7F}
+.badge-bar{background:rgba(139,69,19,.1);color:#8B4513}.badge-shop{background:rgba(128,0,128,.08);color:#7B2D8B}
+.badge-beach{background:rgba(245,158,11,.1);color:var(--sun-dark)}
+
+.move-banner{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;border-radius:12px;margin-top:1.5rem;font-size:.85rem;font-weight:500;color:var(--bark-light)}
+.move-banner.xpt{background:linear-gradient(135deg,rgba(107,76,154,.08),rgba(107,76,154,.04));border:1px solid rgba(107,76,154,.12)}
+.move-banner.depart{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(212,168,67,.08))}
+.move-banner .move-icon{font-size:1.2rem}
+.train-info{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:10px;background:rgba(107,76,154,.05);border:1px dashed rgba(107,76,154,.2);font-size:.8rem;color:var(--g700);margin-top:.75rem}
+.info-callout{display:flex;gap:.75rem;padding:1rem 1.25rem;border-radius:12px;margin-top:1rem;font-size:.82rem;line-height:1.6;color:var(--bark-light)}
+.info-callout.tip{background:rgba(0,180,160,.06);border-left:3px solid var(--reef)}
+.info-callout.warn{background:rgba(232,93,58,.06);border-left:3px solid var(--coral)}
+.info-callout .callout-icon{font-size:1rem;flex-shrink:0;padding-top:.1rem}
+
+.tips-section{background:var(--bark);color:var(--white);padding:5rem 2rem}
+.tips-inner{max-width:1100px;margin:0 auto}
+.tips-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;margin-bottom:3rem;color:var(--golden)}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.tip-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2rem;transition:background .3s}
+.tip-card:hover{background:rgba(255,255,255,.08)}
+.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}
+.tip-card h3{font-family:'DM Sans',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--golden);margin-bottom:.75rem}
+.tip-card p{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.8}
+.footer{text-align:center;padding:3rem 2rem;font-size:.8rem;color:var(--g500)}.footer a{color:var(--ocean-light);text-decoration:none}
+.city-divider{height:60px;display:flex;align-items:center;justify-content:center}.city-divider svg{width:28px;height:28px;fill:var(--g300);opacity:.5}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-8px)}60%{transform:translateX(-50%) translateY(-4px)}}
+.nav-bar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(255,255,255,.1);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.15);transition:background .3s}
+.nav-content{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:center;gap:2rem}
+.nav-link{font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;color:rgba(255,255,255,.6);transition:color .3s,transform .2s;display:flex;align-items:center;gap:.5rem}
+.nav-link:hover{color:var(--white);transform:translateY(-1px)}
+.nav-link.active{color:var(--white);position:relative}
+.nav-link.active::after{content:'';position:absolute;bottom:-.5rem;left:0;width:100%;height:2px;background:var(--white);border-radius:2px}
+@media(max-width:768px){.city-header{flex-direction:column;align-items:flex-start;gap:.5rem}.city-number{font-size:3rem}.city-info h2{font-size:1.8rem}.day-card{padding:1.5rem}.place-item{grid-template-columns:50px 1fr}.place-badge{display:none}.hero-dates{gap:.6rem}.hero-date-card{min-width:90px;padding:.8rem .9rem}.hero-date-card .value{font-size:.9rem}.overview{grid-template-columns:repeat(2,1fr)}.overview-item{border-bottom:1px solid rgba(255,255,255,.08)}.nights-bar{height:32px}.nights-bar .bar-seg{font-size:.5rem}.transport-badge{margin-left:0;display:flex}.flight-card{flex-direction:column;align-items:flex-start;gap:.5rem}.nav-content{padding:.8rem 1rem;gap:1rem}.nav-link{font-size:.6rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-content">
+    <a href="australia-final-v2.html" class="nav-link"><span>🐨</span> Melbourne Route</a>
+    <a href="australia-brisbane.html" class="nav-link active"><span>☀️</span> Brisbane Route</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-flag">🇦🇺 🚆 Sydney → Brisbane 2026</div>
+    <h1>Sydney &<br><em>Brisbane</em></h1>
+    <p class="hero-subtitle">시드니 IN · 브리즈번 OUT &nbsp;·&nbsp; 야간열차 이동 · 아열대 햇살 가족 여행</p>
+    <div class="hero-dates">
+      <div class="hero-date-card"><div class="label">출발</div><div class="value">6/22 인천 21:50</div></div>
+      <div class="hero-date-card"><div class="label">시드니 도착</div><div class="value">6/23 09:05</div></div>
+      <div class="hero-date-card"><div class="label">브리즈번 출국</div><div class="value">6/30 06:00</div></div>
+      <div class="hero-date-card"><div class="label">인원</div><div class="value">4인 가족</div></div>
+      <div class="hero-date-card"><div class="label">이동</div><div class="value">🚆 XPT 열차</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<div class="overview">
+  <div class="overview-item"><div class="icon">✈️</div><div class="title">항공</div><div class="detail">JQ48 시드니 IN · 브리즈번 OUT</div></div>
+  <div class="overview-item"><div class="icon">🚆</div><div class="title">도시 이동</div><div class="detail">XPT 야간열차 슬리퍼 14h</div></div>
+  <div class="overview-item"><div class="icon">🌡️</div><div class="title">날씨</div><div class="detail">시드니 10~17° · 브리즈번 12~22°</div></div>
+  <div class="overview-item"><div class="icon">🏨</div><div class="title">숙박</div><div class="detail">시드니 3 · 열차 1 · 브리즈번 3</div></div>
+  <div class="overview-item"><div class="icon">☀️</div><div class="title">브리즈번</div><div class="detail">아열대! 골드코스트 근접</div></div>
+</div>
+
+<div class="flight-banner">
+  <div class="flight-card">
+    <span class="airline">JQ 48 · Jetstar</span>
+    <span class="route">ICN 인천 21:50 → SYD 시드니 09:05(+1)</span>
+    <span class="detail">Boeing 787 · 10h 15m · 6/22 출발 → 6/23 도착</span>
+  </div>
+</div>
+
+<div class="nights-bar">
+  <div class="bar-seg bar-syd">시드니 3박 (6/23~25)</div>
+  <div class="bar-seg bar-train">🚆</div>
+  <div class="bar-seg bar-bne">브리즈번 3박 (6/27~29)</div>
+</div>
+
+<!-- ═══════ SYDNEY ═══════ -->
+<section class="city-section">
+  <div class="city-header">
+    <div class="city-number">01</div>
+    <div class="city-info">
+      <h2>Sydney</h2>
+      <div class="city-meta">Day 1 — 4 · 6/23(화) — 6/26(금) · 3박</div>
+    </div>
+  </div>
+  <div class="city-weather">☁️ 겨울 · 최저 8° 최고 17° · 경량 패딩 필수</div>
+  <span class="transport-badge">🚆 Opal Card로 기차·페리·버스 전부 OK</span>
+
+  <!-- Day 1 -->
+  <div class="day-card sydney">
+    <div class="day-label sydney">📍 DAY 1 · 6/23 (화) · 시드니 도착일</div>
+    <div class="day-title">아침 도착 · 하버 탐방 · Opera Bar 야경</div>
+    <div class="day-narrative">09:05 도착! 호텔에 짐 맡기고 바로 시드니 핵심을 돌아봅니다.</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">9:05 AM</div><div class="place-content"><h4>시드니 공항 (SYD) 도착</h4><div class="place-note">JQ48 도착. Airport Link로 시내 15분(Opal Card). 숙소에 짐 맡기고 출발!</div></div><span class="place-badge badge-culture">✈️ 도착</span></div>
+      <div class="place-item"><div class="place-time">12:00 PM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=3545450935484072529" target="_blank">Sydney Opera House</a></h4><div class="place-note">내부 투어(한국어 오디오, 1시간) + 하버 브릿지 조망. 사전 예약 추천.</div><a class="place-link" href="https://www.sydneyoperahouse.com/" target="_blank"><span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span> 투어 예약</a></div><span class="place-badge badge-culture">🎭 문화</span></div>
+      <div class="place-item"><div class="place-time">1:30 PM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=1081283275369080736" target="_blank">Royal Botanic Garden</a></h4><div class="place-note">Mrs Macquaries Chair에서 하버브릿지+오페라하우스 인생샷! 무료.</div></div><span class="place-badge badge-nature">📸 포토</span></div>
+      <div class="place-item"><div class="place-time">3:00 PM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=360707331168849248" target="_blank">The Rocks 탐방 & 늦은 점심</a></h4><div class="place-note">호주 최고(最古) 펍 The Fortune of War(1828~)에서 맥주 + 피쉬앤칩스.</div><span class="spot-tag">🍺 The Fortune of War</span></div><span class="place-badge badge-food">🍽️ 맛집</span></div>
+      <div class="place-item"><div class="place-time">6:30 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Opera+Bar+Sydney" target="_blank">Opera Bar 야경 디너</a></h4><div class="place-note">하버 브릿지 야경 바라보며 칵테일. 사전 예약 강추!</div><span class="spot-tag">🍸 Opera Bar 예약 필수</span></div><span class="place-badge badge-bar">🌃 야경</span></div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card sydney">
+    <div class="day-label sydney">📍 DAY 2 · 6/24 (수)</div>
+    <div class="day-title">본다이 해안 산책 · 피쉬마켓 · 뉴타운</div>
+    <div class="day-narrative">본다이~쿠지 해안 산책(⚡ 첫 번째 액티브) → 피쉬마켓 해산물 → 힙한 뉴타운 → 달링하버 디너.</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">9:00 AM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=2360757059930941816" target="_blank">Bondi → Coogee Coastal Walk</a></h4><div class="place-note">버스로 이동(Opal). 약 6km, 2시간. ⚡ 첫 번째 액티브! Bondi Icebergs Pool도 구경.</div><span class="spot-tag">🏊 Bondi Icebergs Pool</span></div><span class="place-badge badge-active">🏃 액티브</span></div>
+      <div class="place-item"><div class="place-time">12:30 PM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=13916973741484413364" target="_blank">Sydney Fish Market</a></h4><div class="place-note">경전철로 이동. 2024년 신축. 랍스터, 생굴로 점심!</div><a class="place-link" href="http://www.sydneyfishmarket.com.au/" target="_blank"><span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span> 공식 웹사이트</a></div><span class="place-badge badge-food">🦞 맛집</span></div>
+      <div class="place-item"><div class="place-time">2:30 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Newtown+Sydney+cafe" target="_blank">Newtown 힙스터 타운</a></h4><div class="place-note">시드니의 홍대! Black Star Pastry 수박 케이크 필수!</div><span class="spot-tag">🍰 Black Star Pastry</span><span class="spot-tag">🛍️ King Street</span></div><span class="place-badge badge-food">🍰 맛집</span></div>
+      <div class="place-item"><div class="place-time">5:30 PM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=8327007198099986160" target="_blank">Darling Harbour 저녁</a></h4><div class="place-note">워터프론트 레스토랑 가족 디너. 야경이 아름다운 시드니의 밤.</div></div><span class="place-badge badge-food">🍽️ 디너</span></div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card sydney">
+    <div class="day-label sydney">📍 DAY 3 · 6/25 (목)</div>
+    <div class="day-title">🚆 기차로 블루마운틴 · Leura 카페</div>
+    <div class="day-narrative">Central → Katoomba 기차 2시간(Opal). Three Sisters + Scenic World + Leura 마을 카페. ⚡ 두 번째 액티브!</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">8:00 AM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=1081283275369137056" target="_blank">Blue Mountains (기차 이동)</a></h4><div class="place-note">Three Sisters 전망대, Scenic World 케이블카·레일웨이. 부시워킹 트레일. ⚡ 두 번째 액티브!</div><a class="place-link" href="https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park" target="_blank"><span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span> 공식 웹사이트</a></div><span class="place-badge badge-active">🥾 액티브</span></div>
+      <div class="place-item"><div class="place-time">1:00 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Leura+Mall+cafe+Blue+Mountains" target="_blank">Leura 마을 카페 투어</a></h4><div class="place-note">Katoomba에서 기차 한 정거장(3분). 감성 카페·부티크숍 가득. 점심 겸 브런치.</div><span class="spot-tag">☕ Leura Mall 카페 거리</span></div><span class="place-badge badge-food">☕ 카페</span></div>
+    </div>
+    <div class="train-info">🚆 Central → Katoomba 약 2시간 · Opal Card 사용</div>
+    <div class="info-callout tip">
+      <span class="callout-icon">🎫</span>
+      <span><strong>블루마운틴 데이투어 상품:</strong><br>
+      <a href="https://www.viator.com/tours/Sydney/All-Inclusive-Blue-Mountains-Small-Group-Day-Trip-from-Sydney/d357-22584P1" target="_blank" style="color:var(--ocean-light);font-weight:600">✅ Viator · 올인클루시브 소그룹 (리뷰 7,800+) ⭐ 베스트셀러</a><br>
+      <a href="https://www.getyourguide.com/sydney-l200/all-inclusive-blue-mountains-day-tour-t13261/" target="_blank" style="color:var(--ocean-light);font-weight:600">✅ GetYourGuide · 올인클루시브 (Scenic World+동물원+점심+페리)</a><br>
+      <a href="https://www.viator.com/tours/Sydney/Blue-Mountains-Day-Trip-from-Sydney-Including-Scenic-World/d357-8129P1" target="_blank" style="color:var(--ocean-light);font-weight:600">✅ Viator · Scenic World + Leura 점심 자유 (리뷰 2,500+)</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card sydney">
+    <div class="day-label sydney">📍 DAY 4 · 6/26 (금)</div>
+    <div class="day-title">타롱가 동물원 · 쇼핑 · 야간열차 🚆</div>
+    <div class="day-narrative">오전에 타롱가 동물원, 점심 후 쇼핑, 오후에 XPT 야간열차로 브리즈번으로! (시드니→브리즈번 14시간)</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">9:00 AM</div><div class="place-content"><h4><a href="https://maps.google.com/?cid=12590240040890262054" target="_blank">Taronga Zoo Sydney</a></h4><div class="place-note">Circular Quay에서 페리 12분(Opal). 코알라 인카운터 사전 예약. 오전 핵심만!</div><a class="place-link" href="https://taronga.org.au/sydney-zoo" target="_blank"><span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span> 공식 웹사이트</a></div><span class="place-badge badge-nature">🐨 동물</span></div>
+      <div class="place-item"><div class="place-time">1:00 PM</div><div class="place-content"><h4>점심 & 마지막 쇼핑</h4><div class="place-note">QVB 쇼핑 또는 패디스 마켓. Central Station 근처에서 저녁 식사 후 열차 준비.</div></div><span class="place-badge badge-shop">🛒 쇼핑</span></div>
+    </div>
+    <div class="move-banner xpt">
+      <span class="move-icon">🚆</span>
+      <span><strong>XPT 야간열차</strong> · Central Station 14:41 출발 → Brisbane Roma Street 다음날 ~05:00 도착 · 약 14시간 · 슬리퍼 클래스(침대칸+샤워)</span>
+    </div>
+    <div class="info-callout tip">
+      <span class="callout-icon">💡</span>
+      <span><strong>시드니→브리즈번 XPT:</strong> 멜버른행보다 3시간 더 걸리지만(14시간), 슬리퍼 침대칸에서 자면서 이동하니 시간 낭비 없음! NSW 해안과 뉴잉글랜드 고원을 따라 달리는 경치도 멋집니다. 뷔페차에서 저녁·아침 구매 가능. NSW TrainLink 사전 예약 필수.</span>
+    </div>
+  </div>
+</section>
+
+<div class="city-divider"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+
+<!-- ═══════ BRISBANE ═══════ -->
+<section class="city-section">
+  <div class="city-header">
+    <div class="city-number">02</div>
+    <div class="city-info">
+      <h2>Brisbane</h2>
+      <div class="city-meta">Day 5 — 8 · 6/27(토) — 6/30(화) · 3박</div>
+    </div>
+  </div>
+  <div class="city-weather">☀️ 아열대 겨울 · 12~22° · 시드니보다 따뜻!</div>
+  <span class="transport-badge">🚌 Go Card로 버스·페리·기차 · 골드코스트 기차 1.5h</span>
+
+  <!-- Day 5 -->
+  <div class="day-card brisbane">
+    <div class="day-label brisbane">📍 DAY 5 · 6/27 (토)</div>
+    <div class="day-title">브리즈번 도착 · 사우스뱅크 · Mt Coot-tha</div>
+    <div class="day-narrative">XPT 새벽 5시쯤 도착. 호텔에 짐 맡기고 여유롭게 브런치 후, 브리즈번의 핵심을 돌아봅니다. 아열대 햇살이 시드니와는 완전히 다른 분위기!</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">9:00 AM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/South+Bank+Parklands+Brisbane" target="_blank">South Bank Parklands & Streets Beach</a></h4><div class="place-note">브리즈번의 심장! 도심 한가운데 인공 해변(Streets Beach)에서 수영 가능(무료). 17헥타르 공원 산책, 카페에서 브런치. 주말 마켓도 열림.</div><span class="spot-tag">🏖️ Streets Beach 무료</span><span class="spot-tag">🎪 주말 마켓</span></div><span class="place-badge badge-beach">☀️ 비치</span></div>
+      <div class="place-item"><div class="place-time">11:30 AM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/GOMA+Gallery+Modern+Art+Brisbane" target="_blank">GOMA (Gallery of Modern Art)</a></h4><div class="place-note">호주 최대 규모의 현대미술관. 무료 입장! South Bank 바로 옆. 20대 자녀분들이 좋아할 인터랙티브 전시도 많음.</div></div><span class="place-badge badge-culture">🎨 문화</span></div>
+      <div class="place-item"><div class="place-time">2:00 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Queen+Street+Mall+Brisbane" target="_blank">Queen Street Mall & Fish Lane</a></h4><div class="place-note">브리즈번 중심 쇼핑거리. 인근 Fish Lane은 트렌디한 바·레스토랑·카페 밀집 지역. 점심은 여기서!</div><span class="spot-tag">🍽️ Fish Lane 맛집 골목</span></div><span class="place-badge badge-food">🍽️ 맛집</span></div>
+      <div class="place-item"><div class="place-time">4:30 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Mt+Coot-tha+Lookout+Brisbane" target="_blank">Mt Coot-tha Lookout</a></h4><div class="place-note">브리즈번 시내에서 버스 20분. 시내 전경 + 모턴만까지 360도 파노라마 뷰! 석양 타이밍에 방문하면 최고.</div></div><span class="place-badge badge-nature">🌅 전망</span></div>
+      <div class="place-item"><div class="place-time">7:00 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Eat+Street+Northshore+Brisbane" target="_blank">Eat Street Northshore (금·토만 운영)</a></h4><div class="place-note">컨테이너를 개조한 야외 푸드마켓! 전세계 음식 + 라이브 음악 + 페어리라이트. 토요일 저녁에 딱! 입장료 약 $5.</div><span class="spot-tag">🌮 컨테이너 푸드마켓</span><span class="spot-tag">🎵 라이브 음악</span></div><span class="place-badge badge-food">🎉 나이트</span></div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-card brisbane">
+    <div class="day-label brisbane">📍 DAY 6 · 6/28 (일)</div>
+    <div class="day-title">🐨 론파인 코알라 + 골드코스트 서퍼스 파라다이스</div>
+    <div class="day-narrative">세계 최대·최고(最古) 코알라 보호구에서 코알라를 안아보고, 오후에는 기차로 골드코스트까지! 서퍼스 파라다이스 해변을 즐기는 알찬 하루.</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">9:00 AM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Lone+Pine+Koala+Sanctuary+Brisbane" target="_blank">Lone Pine Koala Sanctuary</a></h4><div class="place-note">1927년 설립, 세계 최대 코알라 보호구! 130마리+ 코알라, 캥거루 손먹이기, 오리너구리 관찰. 코알라 안기 사진 가능(퀸즐랜드만!). 시내에서 버스 40분 또는 리버크루즈로 이동.</div><span class="spot-tag">🐨 코알라 안기 가능!</span><span class="spot-tag">🚢 리버크루즈 추천</span></div><span class="place-badge badge-nature">🐨 동물</span></div>
+      <div class="place-item"><div class="place-time">2:00 PM</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Surfers+Paradise+Gold+Coast" target="_blank">골드코스트 · Surfers Paradise</a></h4><div class="place-note">브리즈번에서 기차로 약 1.5시간(Go Card). 끝없이 펼쳐진 금빛 해변! 서퍼스 파라다이스 비치 산책, 해변 카페에서 커피, 쇼핑몰 구경. 6월에도 낮 20도 전후라 쾌적.</div><span class="spot-tag">🏄 서퍼스 파라다이스</span></div><span class="place-badge badge-beach">🏖️ 해변</span></div>
+    </div>
+    <div class="train-info">🚆 Brisbane Central → Surfers Paradise (Helensvale 환승) · 약 1.5시간 · Go Card 사용</div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-card brisbane">
+    <div class="day-label brisbane">📍 DAY 7 · 6/29 (월)</div>
+    <div class="day-title">모턴 아일랜드 or 자유일 · 마트 쇼핑 · 공항 이동</div>
+    <div class="day-narrative">마지막 풀데이! 모턴 아일랜드 데이투어(난파선 스노클링!)를 가거나, 브리즈번 시내에서 여유로운 하루를 보낸 뒤 공항 호텔로 이동.</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">옵션 A</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Tangalooma+Moreton+Island" target="_blank">모턴 아일랜드 데이투어 (종일)</a></h4><div class="place-note">브리즈번에서 페리 75분. 탕갈루마 난파선(Tangalooma Wrecks)에서 스노클링, 야생 돌고래 먹이주기(저녁), 사막 샌드보딩! 데이투어로 예약 가능.</div><span class="spot-tag">🤿 난파선 스노클링</span><span class="spot-tag">🐬 돌고래</span></div><span class="place-badge badge-nature">🏝️ 섬투어</span></div>
+      <div class="place-item"><div class="place-time">옵션 B</div><div class="place-content"><h4>브리즈번 자유일</h4><div class="place-note">Story Bridge 클라임(선택, 예약), Kangaroo Point 절벽 산책, West End 브런치(브리즈번의 홍대!), Roma Street Parkland 산책. 여유로운 마지막 날.</div><span class="spot-tag">🧗 Story Bridge 클라임</span><span class="spot-tag">☕ West End 카페</span></div><span class="place-badge badge-culture">🧳 자유</span></div>
+      <div class="place-item"><div class="place-time">오후</div><div class="place-content"><h4><a href="https://www.google.com/maps/search/Woolworths+Brisbane+CBD" target="_blank">Woolworths / Coles 마지막 쇼핑</a></h4><div class="place-note">Tim Tam, Swisse 영양제, 마카다미아, 호주 와인. 마트가 공항보다 훨씬 저렴!</div><span class="spot-tag">🍫 Tim Tam</span><span class="spot-tag">💊 Swisse</span><span class="spot-tag">🥜 마카다미아</span></div><span class="place-badge badge-shop">🛒 쇼핑</span></div>
+      <div class="place-item"><div class="place-time">저녁</div><div class="place-content"><h4>시내 마지막 저녁 → 공항 호텔</h4><div class="place-note">South Bank에서 마지막 저녁 식사. AirTrain으로 공항 20분. 공항 근처 호텔(Novotel Brisbane Airport 등)에서 1박.</div></div><span class="place-badge badge-culture">🧳 이동</span></div>
+    </div>
+    <div class="info-callout warn">
+      <span class="callout-icon">⚠️</span>
+      <span><strong>새벽 6시 비행 체크인:</strong><br>
+      <strong>옵션 A (추천):</strong> 공항 근처 호텔(Novotel Brisbane Airport 등)에서 1박. 셔틀 5분. 알람 3:30AM.<br>
+      <strong>옵션 B:</strong> 시내 호텔에서 새벽 AirTrain(첫차 확인) 또는 택시/Uber로 공항 이동(약 20분).</span>
+    </div>
+  </div>
+
+  <!-- Day 8 -->
+  <div class="day-card brisbane">
+    <div class="day-label brisbane">📍 DAY 8 · 6/30 (화)</div>
+    <div class="day-title">✈️ 브리즈번 출국 · 06:00</div>
+    <div class="day-narrative">브리즈번 국제공항(BNE)에서 출국!</div>
+    <div class="place-list">
+      <div class="place-item"><div class="place-time">4:00 AM</div><div class="place-content"><h4>브리즈번 국제공항 (BNE) 체크인</h4><div class="place-note">국제선 2~3시간 전 도착 권장. 면세점에서 UGG 부츠, 호주 와인 마지막 찬스!</div><span class="spot-tag">👢 UGG 부츠 면세</span><span class="spot-tag">🍷 호주 와인 면세</span></div><span class="place-badge badge-culture">✈️ 출국</span></div>
+    </div>
+    <div class="move-banner depart">
+      <span class="move-icon">✈️</span>
+      <span>06:00 브리즈번 국제공항 (BNE) 출발 → 귀국 · 수고하셨습니다! 🎉</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TIPS ═══════ -->
+<section class="tips-section">
+  <div class="tips-inner">
+    <h2 class="tips-title">실용 여행 팁</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🚆</div>
+        <h3>XPT 야간열차 (시드니→브리즈번)</h3>
+        <p>약 14시간 소요. 슬리퍼 클래스(침대칸)에 샤워·화장실 포함. 멜버른행보다 3시간 더 걸리지만 자면서 이동! NSW 해안·뉴잉글랜드 고원 경치도 멋짐. NSW TrainLink 사전 예약 필수. 1인 약 $110~180.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚋</div>
+        <h3>교통카드</h3>
+        <p>시드니는 Opal Card. 브리즈번은 Go Card(또는 컨택리스 카드)로 버스·페리·기차·트램 전부! 골드코스트까지도 Go Card 기차로 이동 가능(약 1.5시간). 브리즈번 AirTrain도 Go Card OK.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">☀️</div>
+        <h3>날씨 비교</h3>
+        <p>시드니: 겨울 8~17°C, 경량 패딩 필수. 브리즈번: 아열대 겨울 12~22°C, 시드니보다 훨씬 따뜻! 낮에는 반팔도 OK. 골드코스트도 비슷. 자외선 강하니 선크림 챙기세요.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🐨</div>
+        <h3>코알라 안기</h3>
+        <p>호주에서 코알라를 안을 수 있는 건 퀸즐랜드·남호주·서호주뿐! NSW(시드니)에서는 불가. 브리즈번 론파인에서 꼭 코알라 안기 사진을 찍으세요. 사전 예약 추천.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🏖️</div>
+        <h3>골드코스트</h3>
+        <p>브리즈번에서 기차로 약 1.5시간(Go Card). 서퍼스 파라다이스 비치, SkyPoint 전망대, 테마파크(무비월드, 시월드). 반나절~1일 코스로 딱!</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🪪</div>
+        <h3>비자 (ETA)</h3>
+        <p>한국 여권 → 호주 ETA 온라인 신청 필요. 출발 최소 2주 전. 가족 모두 개별 신청.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎁</div>
+        <h3>쇼핑 리스트</h3>
+        <p>Tim Tam, Swisse 영양제, 마카다미아(퀸즐랜드가 원산지!), 호주 와인, UGG 부츠(면세). 마트가 공항보다 30~50% 저렴!</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">✈️</div>
+        <h3>새벽 비행 팁</h3>
+        <p>브리즈번 공항(BNE)은 시내에서 AirTrain으로 약 20분. 새벽 6시 비행이면 공항 호텔(Novotel Airport 등) 1박이 편합니다. AirTrain 첫차 시간 확인 필수.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>🇦🇺 호주 가족여행 2026 &nbsp;·&nbsp; JQ48 시드니 IN · 브리즈번 OUT &nbsp;·&nbsp; 🚆 야간열차 · 렌트 없음 &nbsp;·&nbsp; <a href="#">Kenneth's Family Trip</a></p>
+</footer>
+
+</body>
+</html>
