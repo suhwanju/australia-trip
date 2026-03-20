@@ -24,20 +24,26 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sand);color:var(--ba
 .card-image{height:220px;position:relative;overflow:hidden}
 .card-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.4) 100%)}
 .route-card.melbourne .card-image{background:linear-gradient(135deg,var(--ocean) 0%,var(--ocean-light) 100%)}
-.route-card.brisbane .card-image{background:linear-gradient(135deg,var(--sun-dark) 0%,var(--sun) 100%)}
+.route-card.flight .card-image{background:linear-gradient(135deg,#0047AB 0%,var(--coral) 100%)}
+.route-card.train .card-image{background:linear-gradient(135deg,#6B4C9A 0%,var(--sun-dark) 100%)}
+.route-card.hotel .card-image{background:linear-gradient(135deg,#00B4A0 0%,#1B5E7B 100%)}
 .card-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:5rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.2))}
 
 .card-content{padding:2.5rem;display:flex;flex-direction:column;flex-grow:1}
 .route-label{font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
 .route-card.melbourne .route-label{color:var(--ocean)}
-.route-card.brisbane .route-label{color:var(--sun-dark)}
+.route-card.flight .route-label{color:var(--coral)}
+.route-card.train .route-label{color:#6B4C9A}
+.route-card.hotel .route-label{color:#00B4A0}
 
 .card-content h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:1rem;color:var(--bark)}
 .card-content p{font-size:.95rem;color:var(--g700);line-height:1.7;margin-bottom:2rem;flex-grow:1}
 
 .route-btn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;padding:1rem 2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transition:all .3s ease}
 .route-card.melbourne .route-btn{background:var(--ocean);color:var(--white)}
-.route-card.brisbane .route-btn{background:var(--sun-dark);color:var(--white)}
+.route-card.flight .route-btn{background:var(--coral);color:var(--white)}
+.route-card.train .route-btn{background:#6B4C9A;color:var(--white)}
+.route-card.hotel .route-btn{background:#00B4A0;color:var(--white)}
 .route-card:hover .route-btn{opacity:0.9;gap:1rem}
 
 .footer{text-align:center;padding:4rem 2rem;margin-top:auto;font-size:.85rem;color:var(--g700);font-family:'DM Sans',sans-serif;opacity:0.6}
@@ -67,20 +73,46 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sand);color:var(--ba
       <div class="route-label">Option 01</div>
       <h2>Sydney & Melbourne</h2>
       <p>예술과 커피의 도시 멜버른. 그레이트 오션 로드의 압도적인 자연경관과 시티 트램 투어를 즐기는 완벽한 남부 여정.</p>
-      <div class="route-btn">View Itinerary <span>→</span></div>
+      <div class="route-btn">View Route <span>→</span></div>
     </div>
   </a>
 
-  <!-- Brisbane Card -->
-  <a href="australia-brisbane.html" class="route-card brisbane">
+  <!-- Flight Route Card -->
+  <a href="australia-final-flight.html" class="route-card flight">
     <div class="card-image">
-      <div class="card-icon">☀️</div>
+      <div class="card-icon">✈️</div>
     </div>
     <div class="card-content">
-      <div class="route-label">Option 02</div>
+      <div class="route-label">Option 02 (Flight)</div>
       <h2>Sydney & Brisbane</h2>
-      <p>아열대의 여유와 따사로운 햇살. 론파인 코알라 보호구와 골드코스트의 금빛 해변을 만나는 화창한 동북부 여정.</p>
-      <div class="route-btn" style="background:var(--sun-dark)">View Itinerary <span>→</span></div>
+      <p>국내선 항공 이동으로 시간을 절약하고 브리즈번/골드코스트의 아열대 햇살을 만끽하세요. 귀국은 대한항공 직항으로!</p>
+      <div class="route-btn">View Route <span>→</span></div>
+    </div>
+  </a>
+
+  <!-- Train Route Card -->
+  <a href="australia-brisbane-agent.html" class="route-card train">
+    <div class="card-image">
+      <div class="card-icon">🚆</div>
+    </div>
+    <div class="card-content">
+      <div class="route-label">Option 03 (Train)</div>
+      <h2>Sydney & Brisbane</h2>
+      <p>호주 동부 해안을 달리는 XPT 야간열차의 낭만. 슬리퍼(침대칸) 클래스로 이동 비용을 아끼는 가성비 넘치는 여정.</p>
+      <div class="route-btn">View Route <span>→</span></div>
+    </div>
+  </a>
+
+  <!-- Accommodation Guide Card -->
+  <a href="accommodation-guide.jsx" class="route-card hotel">
+    <div class="card-image">
+      <div class="card-icon">🏨</div>
+    </div>
+    <div class="card-content">
+      <div class="route-label">Bonus Guide</div>
+      <h2>Accommodation Guide</h2>
+      <p>4인 가족 맞춤형! 브리즈번과 시드니의 가성비 아파트호텔 vs 일반 호텔 비교 분석 & 예산 절감 팁 확인하기.</p>
+      <div class="route-btn">View Guide <span>→</span></div>
     </div>
   </a>
 </main>
